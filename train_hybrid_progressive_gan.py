@@ -188,7 +188,8 @@ def main():
 
     print(dataset.files)
     global data_loader
-    data_loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
+    # data_loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
+    data_loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=2)
 
     global grid_points
     grid_points = get_voxel_coordinates(VOXEL_RESOLUTION, return_torch_tensor=True)

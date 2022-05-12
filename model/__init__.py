@@ -40,6 +40,8 @@ class SavableModule(nn.Module):
     def save(self, epoch=None):
         if epoch is not None and not os.path.exists(CHECKPOINT_PATH):
             os.mkdir(CHECKPOINT_PATH)
+        if epoch is not None and os.path.exists(self.get_filename(epoch=epoch-20)):
+            os.remove(self.get_filename(epoch=epoch-20))
         torch.save(self.state_dict(), self.get_filename(epoch=epoch))
 
     @property
