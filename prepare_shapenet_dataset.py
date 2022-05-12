@@ -10,12 +10,12 @@ import traceback
 from mesh_to_sdf import get_surface_point_cloud, scale_to_unit_cube, scale_to_unit_sphere, BadMeshException
 import pyvirtualdisplay
 
-# os.environ['PYOPENGL_PLATFORM'] = 'egl'
-# display = pyvirtualdisplay.Display(visible=False, size=(1400, 900))
-# display.start()
+os.environ['PYOPENGL_PLATFORM'] = 'egl'
+display = pyvirtualdisplay.Display()
+display.start()
 
 DATASET_NAME = 'chairs'
-DIRECTORY_MODELS = 'data/shapenet/03001627/'
+DIRECTORY_MODELS = 'data/shapenet/03001627_mini/'
 MODEL_EXTENSION = '.obj'
 DIRECTORY_VOXELS = 'data/{:s}/voxels_{{:d}}/'.format(DATASET_NAME)
 DIRECTORY_UNIFORM = 'data/{:s}/uniform/'.format(DATASET_NAME)
